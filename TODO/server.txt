@@ -1,1 +1,1 @@
-- instead of http let it https. Note: session object have {...,httpOnly:true} ?!
+- instead of http let it https. Note: session object have {...,httpOnly:true}
