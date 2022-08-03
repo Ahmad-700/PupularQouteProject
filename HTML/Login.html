@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login</title>
+		<link rel="stylesheet" href="..\CSS\W3.css" />
+		<script src="..\Library\jquery-3.6.0.js"></script>
+		<!-- <script src="..\Js\Qoute.js"></script> -->
+		<script src="..\Js\User.js"></script>
+		<script src="..\Js\Login.js"></script>
+		<script src="../Js/header.js"></script>
+		<script src="../Js/footer.js"></script>
+	</head>
+	<body>
+		<!-- Header -->
+		<my-header></my-header>
+
+		<div id="content">
+			<!-- Register Form -->
+			<div class="w3-card-2" style="margin: 40px 0px 80px 0px">
+				<div class="w3-container w3-sand">
+					<h1 class="timesNewRoman">Login</h1>
+				</div>
+				<form id="form" autocomplete="off" >
+					<div class="container">
+						<hr />
+						<label for="username"><b>Username</b></label>
+						<input
+							type="text"
+							placeholder="Enter Username"
+							name="username"
+							id="username"
+							dir="auto"
+
+							required
+						/>
+
+						<label for="psw"><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="password" id="psw" required />
+
+						<div id='loginLoader' class="loader" style="display:none;width:30px;margin:auto;height:30px;border:4px solid #f3f3f3;border-top:4px solid var(--coffee);"></div> 
+
+						<hr />
+
+						<!-- <p class="timesNewRoman">
+							By creating an account you agree to our
+							<a href="#">Terms & Privacy</a>.
+						</p> -->
+						<button type="submit" class="registerbtn">Login</button>
+					</div>
+
+					<div class="container w3-center w3-sand">
+						<p class="timesNewRoman">
+							Don't have an account? <a href="Register.html">Register now</a>.
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--End content-->
+	    <!-- footer -->
+		<my-footer></my-footer>
+	</body>
+</html>

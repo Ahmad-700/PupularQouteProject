@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Popular Quotes</title>
+		<link rel="stylesheet" href="..\CSS\W3.css" />
+		<script src="..\Library\jquery-3.6.0.js"></script>
+		<script src="../Js/header.js"></script>
+		<script src="..\Js\User.js"></script>
+		<script src="..\Js\Home.js"></script>
+		<script src="../Js/footer.js"></script>
+	</head>
+
+	<body id="body">
+		<!-- Header -->
+		<my-header></my-header>
+		
+
+		<!-- Content -->
+		<div id="content" style="margin-top: 20px;">
+			<!-- Search Content-->
+			<div id="searchContent" style="display: flex">
+				<!--SearchBox and DropdownSearchBy-->
+				<div style="width: 100%">
+					<!--SearchBox-->
+					<form id="searchForm" style="width: 100%">
+						<label>
+							<h3 class="timesNewRoman" style="letter-spacing: 1px"><b>Search</b></h3>
+						</label>
+						<!-- <i style="width: 100%;"> -->
+						<input
+							id="searchBox"
+							class="w3-input w3-animate-input w3-round timesNewRoman"
+							placeholder="Find quotes"
+							onkeyup="search(this)"
+							type="search"
+							style="width: 50%"
+							dir="auto"
+							autocomplete="off"
+						/>
+						<!-- </i> -->
+					</form>
+				</div>
+
+				<!--dropdownSearchBy-->
+				<!-- style="margin-top: 60px" -->
+				<div id="dropdown" class="timesNewRoman">
+					<!-- <div class="w3-container " style="bottom:0;position:relative;bottom:0;"> -->
+					<button onclick="$('#myDropdown').slideToggle('fast');" class="dropbtn">
+						Order by<span style="color: var(--coffee)">&nbsp;&#9660;</span>
+					</button>
+					<!-- </div> -->
+					<div id="myDropdown" class="dropdown-content">
+						<a id="orderByLikes" class="orderBy">Likes</a>
+						<a id="orderByAlphaAZ" class="orderBy">Alpha&nbsp; (A - Z)</a>
+						<a id="orderByAlphaZA" class="orderBy">Alpha&nbsp; (Z - A)</a>
+						<a id="orderByDateNewest" class="orderBy">Date&nbsp; (Newest)</a>
+						<a id="orderByDateOldest" class="orderBy">Date&nbsp; (Oldest)</a>
+					</div>
+					<!-- &#9650; and ▼: &#9660; -->
+				</div>
+			</div>
+
+			<hr />
+			
+			<div id='searchOrderbyLoader' class="loader" style="display:block;margin:auto;width:50px"></div> 
+
+
+			<!-- Quotes will loaded below by JS -->
+			<div id="qoutes"></div>
+
+			<!-- Load More button -->
+			<div id="more" class="w3-card" onclick="downloadMore();">More</div>
+			<div id='moreLoader' class="loader" style="display:none;margin:auto;"></div> 
+		</div>
+
+		<!--Unregister user click like-->
+		<div id="modalDiv" class="modal">
+			<span onclick="$(this).parent().fadeOut('fast');" class="close" title="Close Modal" style="cursor:pointer;"
+				>&times;</span
+			>
+			<div class="modal-content w3-round-xxlarge">
+				<div class="containerDeleteModal">
+					<h1 class="timesNewRoman">Register Now</h1>
+					<p>
+						You have to Register first to submit likes! Or Login if you already have an
+						account.
+					</p>
+
+					<div class="clearfix">
+						<button
+							type="button"
+							onclick="$(this).parentsUntil('#modalDiv').parent().fadeOut('fast',()=>location.href = './login');"
+							class="btnsDeleteModal cancelbtn timesNewRoman"
+							style="
+								border-radius: 4px 0 0 4px;
+								outline: 2px solid var(--coffee);
+								background-color: var(--darkSand);
+							"
+							onmouseover="$(this).css('background','var(--coffee)');"
+							onmouseout="$(this).css('background','var(--darkSand)');"
+						>
+							Login
+						</button>
+						<button
+							type="button"
+							onclick="$(this).parentsUntil('#modalDiv').parent().fadeOut('fast',()=>location.href = './register');"
+							class="btnsDeleteModal cancelbtn timesNewRoman"
+							style="
+								border-radius: 0 4px 4px 0;
+								outline: 2px solid var(--coffee);
+								background-color: var(--darkSand);
+							"
+							onmouseover="$(this).css('background','var(--coffee)');"
+							onmouseout="$(this).css('background','var(--darkSand)');"
+						>
+							Register
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- footer -->
+		<my-footer></my-footer>
+	</body>
+</html>

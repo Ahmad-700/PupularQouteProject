@@ -1,0 +1,3 @@
+-change number of quotesPerPage: there are two assigned in server one and other in Home.js when fadIn the More button
+
+-username is not case sensitive i.e "ahmad" === "Ahmad"
